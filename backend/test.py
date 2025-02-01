@@ -37,8 +37,13 @@ soup = BeautifulSoup(html_content, "html.parser")
 oil_spill_text = soup.find("p", id="area").text
 
 # Extract the image source URL
-image_url = soup.find("img", alt="")["src"]
+img_tag = soup.find("img", alt="")
+
+# Extract the src attribute
+if img_tag:
+    image_url = img_tag["src"]
+    print("Image URL:", image_url)
 
 # Print the extracted data
 print("Oil Spill Data:", oil_spill_text)
-print("Overlay Image URL:", image_url)
+print("Overlay Image URL:", "https://oceanwatch.live"+image_url)
