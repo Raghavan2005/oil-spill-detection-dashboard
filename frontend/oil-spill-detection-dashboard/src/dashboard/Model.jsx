@@ -24,7 +24,7 @@ export default function Model() {
       </label>
 
       {/* Image Preview */}
-      {image && (
+            {image && (
         <div className="w-full flex flex-col items-center space-y-3">
           <img src={image} alt="Uploaded" className="w-64 h-64 object-cover rounded-md shadow-md" />
           <p className="text-white">Uploaded Image Preview</p>
