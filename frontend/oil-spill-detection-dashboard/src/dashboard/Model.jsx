@@ -55,6 +55,17 @@ export default function Model() {
 
   return (
     <div className="bg-gray-700 rounded-lg w-full p-5 h-[600px] flex flex-col items-center justify-center space-y-4">
+      
+       {/* Image Preview */}
+       {image!=null ? (
+        <div className="w-full flex flex-col items-center space-y-3">
+          <img src={image} alt="Uploaded" className="w-64 h-64 object-cover rounded-md shadow-md" />
+          <p className="text-white">Uploaded Image Preview</p>
+        </div>
+      ):(<div className="w-full flex flex-col items-center space-y-3">
+        <img src="https://cdn.dribbble.com/users/510907/screenshots/2373320/media/9c3f561dd9b93e972d1659323f915d30.gif" alt="Uploaded" className="w-64 h-64 object-cover rounded-md shadow-md" />
+        <p className="text-white">Pls Upload SAR Image</p>
+      </div>)}
       {/* Upload Section */}
       <label className="bg-blue-500 text-white px-4 py-2 rounded-md cursor-pointer hover:bg-blue-600 transition">
         Upload Image
@@ -66,13 +77,7 @@ export default function Model() {
         />
       </label>
 
-      {/* Image Preview */}
-      {image && (
-        <div className="w-full flex flex-col items-center space-y-3">
-          <img src={image} alt="Uploaded" className="w-64 h-64 object-cover rounded-md shadow-md" />
-          <p className="text-white">Uploaded Image Preview</p>
-        </div>
-      )}
+     
 
       {/* Result Display */}
       <div className="w-full bg-white text-gray-800 p-3 rounded-md shadow-md text-center">

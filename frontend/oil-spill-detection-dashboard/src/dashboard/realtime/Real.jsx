@@ -32,7 +32,7 @@ const Real = () => {
 
   return (
     <div className="container mx-auto p-4">
-    <h2 className="text-2xl font-bold mb-4">Potential Oil Spill Data</h2>
+    <h2 className="text-2xl font-bold mb-4">Potential Oil Spill Data or the last 180 days</h2>
     {oilSpillData.length === 0 ? (
       <p className="text-gray-500">No data available.</p>
     ) : (
