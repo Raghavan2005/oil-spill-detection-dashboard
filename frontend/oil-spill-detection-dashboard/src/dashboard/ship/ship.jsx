@@ -1,7 +1,32 @@
 import React from 'react'
 import Map from '../Map.jsx'
 import { FaArrowAltCircleUp,FaArrowAltCircleDown ,FaArrowAltCircleRight ,FaArrowAltCircleLeft  } from "react-icons/fa";
+import { ScrollMenu, VisibilityContext } from 'react-horizontal-scrolling-menu';
+import 'react-horizontal-scrolling-menu/dist/styles.css';
+
 export default function Ship() {
+  
+const getItems = () =>
+  Array(20)
+    .fill(0)
+    .map((_, ind) => ({ id: `element-${ind}` }));
+
+    const [items, setItems] = React.useState(getItems);
+    const [selected, setSelected] = React.useState([]);
+  
+    const isItemSelected = (id) => !!selected.find((el) => el === id);
+  
+    const handleClick =
+      (id) =>
+      ({ getItemById, scrollToItem }) => {
+        const itemSelected = isItemSelected(id);
+  
+        setSelected((currentSelected) =>
+          itemSelected
+            ? currentSelected.filter((el) => el !== id)
+            : currentSelected.concat(id),
+        );
+      };
   return (
     <div>
 
@@ -67,6 +92,7 @@ export default function Ship() {
       <button className="bg-blue-600 text-white px-4 py-1 rounded-md hover:bg-blue-700 transition">
         Go to Nearest Available Cargos
       </button>
+
       </div>
     </div>
   )
