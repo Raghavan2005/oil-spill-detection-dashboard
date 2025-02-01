@@ -1,33 +1,21 @@
-import { useState } from 'react'
-import './App.css'
-import Nav from './dashboard/Nav.jsx'
-import Map from './dashboard/Map.jsx'
-import Model from './dashboard/Model.jsx'
-function App() {
-  
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './Home.jsx';
+import Real from './dashboard/realtime/Real.jsx';
 
+const App = () => {
   return (
-    <>
-    <div>
-      {/* Navigation Bar */}
-      <Nav />
-  
-      {/* Main Content Section */}
-      <div className="flex p-5 gap-4">
-        {/* Map Section (60% width) */}
-        <div className="w-[60%]">
-          <Map />
-        </div>
-  
-        {/* Model Section (40% width) */}
-        <div className="w-[40%]">
-          <Model />
-        </div>
+    <Router>
+      <div>
+      
+        {/* Route Configuration */}
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/real" element={<Real />} />
+        </Routes>
       </div>
-    </div>
-  </>
-  
-  )
-}
+    </Router>
+  );
+};
 
-export default App
+export default App;

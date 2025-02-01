@@ -1,8 +1,9 @@
 from flask import Flask, request, jsonify
 from model import get_image_url
-
+from realtime import extract_oil_spill_data
+from flask_cors import CORS  # Import CORS
 app = Flask(__name__)
-
+CORS(app)
 @app.route('/khacks/api/model', methods=['POST'])
 def api_get_image_url():
     try:
@@ -19,6 +20,11 @@ def api_get_image_url():
 
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+    
+
+@app.route('/khacks/api/realtime', methods=['GET'])
+def realtime():
+    return extract_oil_spill_data()
 
 if __name__ == '__main__':
     app.run(debug=True)
