@@ -1,0 +1,106 @@
+{
+    "ports": [
+      {
+        "name": "Kandla Port",
+        "state": "Gujarat",
+        "latitude": 23.03,
+        "longitude": 70.22
+      },
+      {
+        "name": "Mumbai Port",
+        "state": "Maharashtra",
+        "latitude": 18.95,
+        "longitude": 72.95
+      },
+      {
+        "name": "Jawaharlal Nehru Port",
+        "state": "Maharashtra",
+        "latitude": 18.95,
+        "longitude": 72.95
+      },
+      {
+        "name": "Marmagao Port",
+        "state": "Goa",
+        "latitude": 15.40,
+        "longitude": 73.80
+      },
+      {
+        "name": "New Mangalore Port",
+        "state": "Karnataka",
+        "latitude": 12.91,
+        "longitude": 74.81
+      },
+      {
+        "name": "Cochin Port",
+        "state": "Kerala",
+        "latitude": 9.97,
+        "longitude": 76.27
+      },
+      {
+        "name": "Chennai Port",
+        "state": "Tamil Nadu",
+        "latitude": 13.08,
+        "longitude": 80.29
+      },
+      {
+        "name": "Tuticorin Port (V.O. Chidambaranar Port)",
+        "state": "Tamil Nadu",
+        "latitude": 8.80,
+        "longitude": 78.16
+      },
+      {
+        "name": "Visakhapatnam Port",
+        "state": "Andhra Pradesh",
+        "latitude": 17.68,
+        "longitude": 83.25
+      },
+      {
+        "name": "Paradip Port",
+        "state": "Odisha",
+        "latitude": 20.26,
+        "longitude": 86.67
+      },
+      {
+        "name": "Kolkata Port",
+        "state": "West Bengal",
+        "latitude": 22.54,
+        "longitude": 88.30
+      },
+      {
+        "name": "Port Blair Port",
+        "state": "Andaman and Nicobar Islands",
+        "latitude": 11.67,
+        "longitude": 92.74
+      },
+      {
+        "name": "Mundra Port",
+        "state": "Gujarat",
+        "latitude": 22.76,
+        "longitude": 69.72
+      },
+      {
+        "name": "Pipavav Port",
+        "state": "Gujarat",
+        "latitude": 20.91,
+        "longitude": 71.50
+      },
+      {
+        "name": "Krishnapatnam Port",
+        "state": "Andhra Pradesh",
+        "latitude": 14.28,
+        "longitude": 80.12
+      },
+      {
+        "name": "Dhamra Port",
+        "state": "Odisha",
+        "latitude": 20.75,
+        "longitude": 87.00
+      },
+      {
+        "name": "Ennore Port (Kamarajar Port)",
+        "state": "Tamil Nadu",
+        "latitude": 13.25,
+        "longitude": 80.33
+      }
+    ]
+  }
