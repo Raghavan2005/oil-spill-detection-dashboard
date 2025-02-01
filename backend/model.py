@@ -17,7 +17,7 @@ def get_image_url(file_path):
 
     files = {
         "csrfmiddlewaretoken": (None, csrf_token),
-        "imagefile": ("test.jpg", open(file_path, "rb"), "image/jpeg")
+        "imagefile": (file_path, open(file_path, "rb"), "image/jpeg")
     }
 
     try:
@@ -47,4 +47,4 @@ def get_image_url(file_path):
        
 
 
-get_image_url("test.jpg")
+
