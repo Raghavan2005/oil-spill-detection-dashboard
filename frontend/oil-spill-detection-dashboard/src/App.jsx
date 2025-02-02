@@ -7,6 +7,7 @@ import FInder from './dashboard/Finder.jsx';
 import History from './dashboard/history/History.jsx';
 import Page_2019 from './dashboard/Page_2019.jsx';
 import Page_2017 from './dashboard/Page_2017.jsx';
+import D3D from './dashboard/D3D.jsx';
 const App = () => {
   return (
     <Router>
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/history" element={<History   />} />
           <Route path="/2019" element={<Page_2019   />} />
           <Route path="/2017" element={<Page_2017   />} />
+          <Route path="/D3D" element={<D3D/>} />
         </Routes>
       </div>
     </Router>

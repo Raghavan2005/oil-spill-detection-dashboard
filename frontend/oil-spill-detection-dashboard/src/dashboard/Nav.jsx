@@ -22,6 +22,9 @@ export default function Nav() {
       <button onClick={()=>navigate('/finder')} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
       Vessel Tracking
       </button>
+      <button onClick={()=>navigate('/D3D')} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+      3D View
+      </button>
     </div>
   );
 }
