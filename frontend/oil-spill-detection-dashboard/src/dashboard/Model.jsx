@@ -1,12 +1,22 @@
-import React, { useState } from "react";
+import React, { useState , useRef  } from "react";
 import axios from "axios"; // Make sure to install axios (npm install axios)
-
+import hm from "./MapHome.jsx"
 export default function Model() {
   const [image, setImage] = useState(null);
   const [imageUrl, setImageUrl] = useState(null); // For the API response
   const [loading, setLoading] = useState(false); // For loading state
   const [error, setError] = useState(null); // For error state
   const [text, setText] = useState("");
+  const mapRef = useRef(); // Create a reference for MapHome
+
+  const triggerLocationChange = () => {
+    if (mapRef.current && mapRef.current.handleLocationChange) {
+      // Call the handleLocationChange function directly via ref
+      mapRef.current.handleLocationChange(2.4814483,-20.4158626); // Example: Change to Mumbai's coordinates
+    }
+  };
+  // Create an audio object for the oil spill sound
+  const oilSpillSound = new Audio("https://cdn.discordapp.com/attachments/1300154897018130484/1335418218730225754/emergency.mp3?ex=67a018a2&is=679ec722&hm=71fa325d1a5c62cc57194f476f3ab746502d25885b77f6ed934ccfd2b7ca7217&"); // Replace with actual sound file path
 
   const handleImageUpload = (event) => {
     if (event.target.files && event.target.files[0]) {
@@ -43,6 +53,10 @@ export default function Model() {
         setImageUrl(response.data.image_url[1]);
         setImage(response.data.image_url[1]);
         setText(response.data.image_url[0]);
+        
+        
+          oilSpillSound.play();
+        
       } else {
         setError("No Oil Spill!");
         setText("no");
@@ -52,7 +66,7 @@ export default function Model() {
       setError("An error occurred while processing the image. Please try again.");
     }
   };
-  
+
   return (
     <div className="bg-gray-700 rounded-lg w-full p-5 h-[600px] flex flex-col items-center justify-center space-y-4">
 
@@ -79,7 +93,7 @@ export default function Model() {
           onChange={handleImageUpload}
         />
       </label>
-
+ <button onClick={triggerLocationChange}>dsfdsf</button>
       {/* Result Display */}
       <div className="w-full bg-white text-gray-800 p-3 rounded-md shadow-md text-center">
         {loading

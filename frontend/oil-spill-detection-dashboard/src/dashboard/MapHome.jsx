@@ -3,7 +3,6 @@ import { MapContainer, TileLayer, CircleMarker, Popup } from "react-leaflet";
 import L from "leaflet"; // Import Leaflet for custom marker icons
 import "leaflet/dist/leaflet.css";
 
-// Import Leaflet marker icons correctly in ES6
 import markerIcon2x from "leaflet/dist/images/marker-icon-2x.png";
 import markerIcon from "leaflet/dist/images/marker-icon.png";
 import markerShadow from "leaflet/dist/images/marker-shadow.png";
@@ -16,10 +15,14 @@ L.Icon.Default.mergeOptions({
   shadowUrl: markerShadow,
 });
 
-export default function MapHome() {
+const MapHome = () => {
   const [ports, setPorts] = useState([]); // State to store port data
   const [weatherData, setWeatherData] = useState([]); // State to store weather data
   const [envData, setEnvData] = useState([]); // State to store environmental data
+  const [mapCenter, setMapCenter] = useState([20.5937, 78.9629]); // Initial map center (India)
+  const [circlePosition, setCirclePosition] = useState(null); // Position of the circle
+  const [isBlinking, setIsBlinking] = useState(false); // Blinking state
+  const [blinkInterval, setBlinkInterval] = useState(null); // To clear the interval later
 
   const weatherApiKey = "53fcecdecf2d714aca6603235a693d6e"; // Add your API key for weather
 
@@ -39,7 +42,7 @@ export default function MapHome() {
       });
   }, []); // Empty dependency array ensures this runs only once on mount
 
-  // Fetch weather data
+  // Fetch weather data for a specific location
   const fetchWeatherData = (latitude, longitude) => {
     fetch(
       `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${weatherApiKey}&units=metric`
@@ -110,7 +113,7 @@ export default function MapHome() {
   return (
     <div className="h-[300px] w-full rounded-lg">
       <MapContainer
-        center={[20.5937, 78.9629]} // Center map on India
+        center={mapCenter} // Center map on current center
         zoom={5}
         scrollWheelZoom={false}
         className="h-[600px] w-full"
@@ -120,6 +123,24 @@ export default function MapHome() {
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         />
 
+        {circlePosition != null && (
+          <CircleMarker
+            center={circlePosition}
+            radius={50}
+            color={isBlinking ? "red" : "blue"}
+            fillColor={isBlinking ? "red" : "blue"}
+            fillOpacity={0.2}
+          >
+            <Popup>
+              <strong>New Location</strong>
+              <br />
+              Latitude: {circlePosition[0]}
+              <br />
+              Longitude: {circlePosition[1]}
+            </Popup>
+          </CircleMarker>
+        )}
+
         {/* Render CircleMarkers for each port with AQI-based color */}
         {ports.map((port, index) => {
           const aqi = getEnvImpactInfo(port.latitude, port.longitude);
@@ -127,10 +148,10 @@ export default function MapHome() {
             <CircleMarker
               key={index}
               center={[port.latitude, port.longitude]}
-              radius={50} // Adjust the size of the circle marker
-              color={getColorByAQI(aqi)} // Color the circle based on AQI
+              radius={20}
+              color={getColorByAQI(aqi)}
               fillColor={getColorByAQI(aqi)}
-              fillOpacity={0.1}
+              fillOpacity={0.2}
             >
               <Popup>
                 <strong>{port.name}</strong>
@@ -147,4 +168,6 @@ export default function MapHome() {
       </MapContainer>
     </div>
   );
-}
+};
+
+export default MapHome;
