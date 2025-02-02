@@ -5,6 +5,8 @@ import Real from './dashboard/realtime/Real.jsx';
 import Ship from './dashboard/ship/ship.jsx';
 import FInder from './dashboard/Finder.jsx';
 import History from './dashboard/history/History.jsx';
+import Page_2019 from './dashboard/Page_2019.jsx';
+import Page_2017 from './dashboard/Page_2017.jsx';
 const App = () => {
   return (
     <Router>
@@ -17,6 +19,8 @@ const App = () => {
           <Route path="/control" element={<Ship />} />
           <Route path="/finder" element={<FInder   />} />
           <Route path="/history" element={<History   />} />
+          <Route path="/2019" element={<Page_2019   />} />
+          <Route path="/2017" element={<Page_2017   />} />
         </Routes>
       </div>
     </Router>
