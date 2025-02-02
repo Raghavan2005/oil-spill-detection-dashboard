@@ -6,3 +6,4 @@ numpy==1.25.0
 streamlit-option-menu==0.2.0
 sentinelhub
 docx
+

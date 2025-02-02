@@ -19,6 +19,9 @@ export default function Nav() {
       <button onClick={()=>navigate('/control')} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
         Control
       </button>
+      <button onClick={()=>navigate('/finder')} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+      Vessel Tracking
+      </button>
     </div>
   );
 }

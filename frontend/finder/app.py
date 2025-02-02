@@ -27,7 +27,7 @@ def main():
         st.sidebar.title("Vessel Tracking Dashboard")
 
         # The options
-        options = ["Home", "Vessel Details","Vessel Alert Docs","Satellite Images"]
+        options = ["Home", "Vessel Details","Vessel Alert Docs"]
 
         # Selectbox for menu
         selected = option_menu(

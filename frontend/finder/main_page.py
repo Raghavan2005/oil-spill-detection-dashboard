@@ -88,7 +88,7 @@ def main_page():
     st.title("Vessel Tracking Dashboard")
 
     
-    col1, col2 = st.columns([3,2])  
+    col1, col2 = st.columns([3,4])  
 
     # Map 
     with col1:
