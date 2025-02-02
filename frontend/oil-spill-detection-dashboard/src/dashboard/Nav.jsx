@@ -13,7 +13,7 @@ export default function Nav() {
       <button onClick={handleClick} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
       RealTime Predict
       </button>
-      <button className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
+      <button onClick={()=>navigate('/history')} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
       Historical Data Analysis
       </button>
       <button onClick={()=>navigate('/control')} className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition">
