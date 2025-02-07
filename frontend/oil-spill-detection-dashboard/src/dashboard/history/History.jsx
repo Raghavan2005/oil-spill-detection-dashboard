@@ -5,6 +5,8 @@ export default function History() {
   const navigate = useNavigate();
   return (
     <div className="flex">
+      <div className="text-[26px] mt-6">Weather Report (RealTime)
+        </div>  
    <div className="p-5 rounded-lg"  style={{ width: "80%", height: "100vh" }}>
       <iframe
         src="http://localhost:8080/"

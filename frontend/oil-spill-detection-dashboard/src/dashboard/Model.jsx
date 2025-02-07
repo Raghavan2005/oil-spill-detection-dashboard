@@ -69,7 +69,8 @@ export default function Model() {
 
   return (
     <div className="bg-gray-700 rounded-lg w-full p-5 h-[600px] flex flex-col items-center justify-center space-y-4">
-
+ <div className="text-[12px] mt-2">For best prediction upload a SAR image with following specifications
+Polarization: VV  |  Layer: GAMMA 0 TERRIAN  |  Contrast: -30 and 10 db Orthorectified  |  Specklefilter: 7 x 7  |  Preferred Size: 512 x 1024  </div>
       {/* Image Preview */}
       {image ? (
         <div className="w-full flex flex-col items-center space-y-3">
@@ -93,7 +94,7 @@ export default function Model() {
           onChange={handleImageUpload}
         />
       </label>
- <button onClick={triggerLocationChange}>dsfdsf</button>
+ 
       {/* Result Display */}
       <div className="w-full bg-white text-gray-800 p-3 rounded-md shadow-md text-center">
         {loading
